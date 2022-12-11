@@ -9,3 +9,5 @@ In order to do so, you need to open a terminal and:
 3. Execute the script by running `./basicswap_install.sh`
 
 NB! When the script terminastes make sure that you write down the recovery phrase that will be printed out!!!
+
+This installation script installs all the currently supported coins Particl, Bitcoin, Litecoin, Monero, Dash, Pivx, Firo and requires at least 100 GB of disk space. Incase you need only a subset of the coins, edit the line 58 in the downloaded bash script according to the instructions provided on the lines 48-54 
