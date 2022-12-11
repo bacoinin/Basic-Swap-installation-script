@@ -4,7 +4,7 @@ https://academy.particl.io/en/latest/basicswap-guides/basicswapguides_installati
 
 In order to do so, you need to open a terminal and:
 
-1. Run `wget https://github.com/bacoinin/Basic-Swap-installation-script/blob/main/basicswap_install.sh` to download the bash script file
+1. Run `wget https://raw.githubusercontent.com/bacoinin/Basic-Swap-installation-script/main/basicswap_install.sh` to download the bash script file
 2. Run the following command `chmod +x basicswap_install.sh` to make the script executable.
 3. Execute the script by running `./basicswap_install.sh`
 
