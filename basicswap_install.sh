@@ -50,6 +50,9 @@ echo "Initializing the coins data directory $SWAP_DATADIR"
 
 # Adjust --withcoins and --withoutcoins as desired to add or remove coins eg: --withcoins=monero,bitcoin. By default only Particl is loaded
 
+# Example with only Litecoin and Dash 
+#basicswap-prepare --datadir=$SWAP_DATADIR --withcoins=litecoin,dash
+
 # The line below installs all the currently supported coins 
 CURRENT_XMR_HEIGHT=$(curl https://localmonero.co/blocks/api/get_stats | jq .height)
 basicswap-prepare --datadir=$SWAP_DATADIR --withcoins=monero,bitcoin,litecoin,dash,pivx,firo --xmrrestoreheight=$CURRENT_XMR_HEIGHT --usebtcfastsync
