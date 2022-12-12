@@ -35,11 +35,11 @@ cd $COINDATA_PATH/coincurve-anonswap
 pip3 install .
 
 echo "Cloning the Basic Swap DEX repo"
-cd $COINDATA_PATH
+cd $HOME
 git clone https://github.com/tecnovert/basicswap.git
 
 echo "Building and installing the Basic Swap DEX"
-cd $COINDATA_PATH/basicswap
+cd $HOME/basicswap
 protoc -I=basicswap --python_out=basicswap basicswap/messages.proto
 pip3 install protobuf==3.20.*
 pip3 install .
@@ -51,11 +51,12 @@ echo "Initializing the coins data directory $COINDATA_PATH"
 # Adjust --withcoins and --withoutcoins as desired to add or remove coins eg: --withcoins=monero,bitcoin. By default only Particl is loaded
 
 # Example with only Litecoin and Dash 
-#basicswap-prepare --datadir=$COINDATA_PATH --withcoins=litecoin,dash
+#./basicswap-prepare --datadir=$COINDATA_PATH --withcoins=litecoin,dash
 
 # The line below installs all the currently supported coins 
 CURRENT_XMR_HEIGHT=$(curl https://localmonero.co/blocks/api/get_stats | jq .height)
-basicswap-prepare --datadir=$COINDATA_PATH --withcoins=monero,bitcoin,litecoin,dash,pivx,firo --xmrrestoreheight=$CURRENT_XMR_HEIGHT --usebtcfastsync
+cd $HOME/basicswap/bin
+./basicswap-prepare --datadir=$COINDATA_PATH --withcoins=monero,bitcoin,litecoin,dash,pivx,firo --xmrrestoreheight=$CURRENT_XMR_HEIGHT --usebtcfastsync
 
 echo "To start the Basic Swap DEX run the command below:"
 echo "source $COINDATA_PATH/venv/bin/activate && basicswap-run --datadir=$COINDATA_PATH"
