@@ -51,12 +51,11 @@ echo "Initializing the coins data directory $COINDATA_PATH"
 # Adjust --withcoins and --withoutcoins as desired to add or remove coins eg: --withcoins=monero,bitcoin. By default only Particl is loaded
 
 # Example with only Litecoin and Dash 
-#./basicswap-prepare --datadir=$COINDATA_PATH --withcoins=litecoin,dash
+#basicswap-prepare --datadir=$COINDATA_PATH --withcoins=litecoin,dash
 
 # The line below installs all the currently supported coins 
 CURRENT_XMR_HEIGHT=$(curl https://localmonero.co/blocks/api/get_stats | jq .height)
-cd $HOME/basicswap/bin
-./basicswap-prepare --datadir=$COINDATA_PATH --withcoins=monero,bitcoin,litecoin,dash,pivx,firo --xmrrestoreheight=$CURRENT_XMR_HEIGHT --usebtcfastsync
+basicswap-prepare --datadir=$COINDATA_PATH --withcoins=monero,bitcoin,litecoin,dash,pivx,firo --xmrrestoreheight=$CURRENT_XMR_HEIGHT --usebtcfastsync
 
 echo "To start the Basic Swap DEX run the command below:"
 echo "source $COINDATA_PATH/venv/bin/activate && basicswap-run --datadir=$COINDATA_PATH"
