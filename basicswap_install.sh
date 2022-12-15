@@ -36,6 +36,7 @@ cd $COINDATA_PATH/coincurve-anonswap
 pip3 install .
 
 echo "Cloning the Basic Swap DEX repo"
+rm -R -f $HOME/basicswap
 cd $HOME
 git clone https://github.com/tecnovert/basicswap.git
 
