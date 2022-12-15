@@ -2,7 +2,7 @@
 set -e
 
 # Set the location where the local nodes for the coins that will included in BasicSwap will be installed
-COINDATA_PATH=/var/data/coindata
+COINDATA_PATH=$HOME/coindata
 echo "The path to the coins data dirs folder is $COINDATA_PATH"
 
 # Uncomment the two lines below if something went wrong and you want to start fresh installation
@@ -15,7 +15,7 @@ sudo apt-get install -y python3-venv python3-pip gnupg unzip protobuf-compiler a
 echo "Creating coins data dir"
 mkdir -p $COINDATA_PATH
 
-cd $SWAP_DATADIR
+cd $COINDATA_PATH
 
 echo "Creating python virtual environment"
 mkdir -p "$COINDATA_PATH/venv"
