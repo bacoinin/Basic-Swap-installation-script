@@ -5,15 +5,13 @@ set -e
 COINDATA_PATH=$HOME/coindata
 echo "The path to the coins data dirs folder is $COINDATA_PATH"
 
-echo "Custom url set for the BTC fast-sync file as the default source appears to be offline for the time being. You can change this in the script to a url and filename of your choice" 
+# Set a custom url set for the BTC fast-sync file
 export BITCOIN_FASTSYNC_URL="https://eu2.contabostorage.com/1f50a74c9dc14888a8664415dad3d020:utxosets/"
 export BITCOIN_FASTSYNC_FILE="utxo-snapshot-bitcoin-mainnet-769818.tar"
-echo "url: $BITCOIN_FASTSYNC_URL"
-echo "filename: "$BITCOIN_FASTSYNC_FILE"
 
 # Uncomment the two lines below if something went wrong and you want to start fresh installation
-#echo "Removing coins data dir folder (if any) to start from the scratch incase this is a re-run"
-#rm -R -f $COINDATA_PATH
+echo "Removing coins data dir folder (if any) to start from the scratch incase this is a re-run"
+rm -R -f $COINDATA_PATH
 
 echo "Installing dependencies for Whonix or other Debian based OSes. In case of other distros replace the package manager command with the appropriate one"
 sudo apt-get install -y python3-venv python3-pip gnupg unzip protobuf-compiler automake libtool pkg-config curl jq git wget
@@ -61,7 +59,7 @@ echo "Initializing the coins data directory $COINDATA_PATH"
 # Example with only Litecoin and Dash 
 #basicswap-prepare --datadir=$COINDATA_PATH --withcoins=litecoin,dash
 
-# The line below installs all the currently supported coins
+# The line below installs all the currently supported coins 
 CURRENT_XMR_HEIGHT=$(curl https://localmonero.co/blocks/api/get_stats | jq .height)
 basicswap-prepare --datadir=$COINDATA_PATH --withcoins=monero,bitcoin,litecoin,dash,pivx,firo --xmrrestoreheight=$CURRENT_XMR_HEIGHT --usebtcfastsync
 
