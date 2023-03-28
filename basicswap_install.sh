@@ -5,11 +5,11 @@ set -e
 COINDATA_PATH=$HOME/coindata
 echo "The path to the coins data dirs folder is $COINDATA_PATH"
 
-echo "Custom url set for the BTC fast-sync file as the default source appears to be offline for the time being. You can change this in the script to a url and filename of your choice" 
-export BITCOIN_FASTSYNC_URL="https://eu2.contabostorage.com/1f50a74c9dc14888a8664415dad3d020:utxosets/"
-export BITCOIN_FASTSYNC_FILE="utxo-snapshot-bitcoin-mainnet-769818.tar"
-echo "url: $BITCOIN_FASTSYNC_URL"
-echo "filename: "BITCOIN_FASTSYNC_FILE"
+#echo "Custom url set for the BTC fast-sync file as the default source appears to be offline for the time being. You can change this in the script to a url and filename of your choice" 
+#export BITCOIN_FASTSYNC_URL="https://eu2.contabostorage.com/1f50a74c9dc14888a8664415dad3d020:utxosets/"
+#export BITCOIN_FASTSYNC_FILE="utxo-snapshot-bitcoin-mainnet-769818.tar"
+#echo "url: $BITCOIN_FASTSYNC_URL"
+#echo "filename: "BITCOIN_FASTSYNC_FILE"
 
 # Uncomment the two lines below if something went wrong and you want to start fresh installation
 #$echo "Removing coins data dir folder (if any) to start from the scratch incase this is a re-run"
