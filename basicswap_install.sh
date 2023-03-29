@@ -10,8 +10,8 @@ export BITCOIN_FASTSYNC_URL="https://eu2.contabostorage.com/1f50a74c9dc14888a866
 export BITCOIN_FASTSYNC_FILE="utxo-snapshot-bitcoin-mainnet-769818.tar"
 
 # Uncomment the two lines below if something went wrong and you want to start fresh installation
-echo "Removing coins data dir folder (if any) to start from the scratch incase this is a re-run"
-rm -R -f $COINDATA_PATH
+#echo "Removing coins data dir folder (if any) to start from the scratch incase this is a re-run"
+#rm -R -f $COINDATA_PATH
 
 echo "Installing dependencies for Whonix or other Debian based OSes. In case of other distros replace the package manager command with the appropriate one"
 sudo apt-get install -y python3-venv python3-pip gnupg unzip protobuf-compiler automake libtool pkg-config curl jq git wget
@@ -22,10 +22,10 @@ mkdir -p $COINDATA_PATH
 cd $COINDATA_PATH
 
 echo "Creating python virtual environment"
-mkdir -p "$COINDATA_PATH/venv"
-python3 -m venv "$COINDATA_PATH/venv"
+mkdir -p "$HOME/basicswap_venv"
+python3 -m venv "$HOME/basicswap_venv"
 
-source "$COINDATA_PATH/venv"/bin/activate 
+source "$HOME/basicswap_venv/bin/activate" 
 echo "The virtual environment uses $(python -V)"
 
 echo "Fetching the coincurve library"
@@ -64,5 +64,5 @@ CURRENT_XMR_HEIGHT=$(curl https://localmonero.co/blocks/api/get_stats | jq .heig
 basicswap-prepare --datadir=$COINDATA_PATH --withcoins=monero,bitcoin,litecoin,dash,pivx,firo --xmrrestoreheight=$CURRENT_XMR_HEIGHT --usebtcfastsync
 
 echo "To start the Basic Swap DEX run the command below:"
-echo "source $COINDATA_PATH/venv/bin/activate && basicswap-run --datadir=$COINDATA_PATH"
+echo "source $HOME/basicswap_venv/bin/activate && basicswap-run --datadir=$COINDATA_PATH"
 echo "!!!DO NOT FORGET TO WRITE DOWN THE 24 WORDS (RECOVERY PHRASE) PRINTED A FEW LINES ABOVE!!!"
