@@ -66,3 +66,5 @@ basicswap-prepare --datadir=$COINDATA_PATH --withcoins=monero,bitcoin,litecoin,d
 echo "To start the Basic Swap DEX run the command below:"
 echo "source $HOME/basicswap_venv/bin/activate && basicswap-run --datadir=$COINDATA_PATH"
 echo "!!!DO NOT FORGET TO WRITE DOWN THE 24 WORDS (RECOVERY PHRASE) PRINTED A FEW LINES ABOVE!!!"
+echo "If you have added XMR support please write down also the CURRENT_XMR_HEIGHT=$CURRENT_XMR_HEIGHT"
+echo "You will need this number if you want to restore the XMR node from the seed phrase"
