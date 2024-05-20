@@ -1,3 +1,11 @@
+NB! The script here is no longer maintained. Please use:
+https://github.com/gerlofvanek/basicswap-installation-GUI/blob/main/electron-gui/build/basicswap-install.sh
+
+of if you want a single line command install run:
+`bash -c "$(curl -fsSL https://raw.githubusercontent.com/gerlofvanek/basicswap-installation-GUI/main/electron-gui/build/basicswap-install.sh)"`
+
+
+
 # Basic-Swap-installation-script
 This is a Basic Swap DEX installation script without docker. Its based on the instructions provided on:
 https://academy.particl.io/en/latest/basicswap-guides/basicswapguides_installation.html#install-without-docker, so instead of running the commands one by one, you can simply run this script once. 
