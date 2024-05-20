@@ -30,8 +30,8 @@ echo "The virtual environment uses $(python -V)"
 
 echo "Fetching the coincurve library"
 rm -R -f $COINDATA_PATH/coincurve-anonswap
-wget https://github.com/tecnovert/coincurve/archive/refs/tags/anonswap_v0.1.tar.gz
-tar -xf anonswap_v0.1.tar.gz
+wget https://github.com/tecnovert/coincurve/archive/refs/tags/anonswap_v0.2.tar.gz
+tar -xf anonswap_v0.2.tar.gz
 mv ./coincurve-anonswap_v0.1 ./coincurve-anonswap 
 #git clone -b anonswap https://github.com/tecnovert/coincurve.git $SWAP_DATADIR/coincurve-anonswap
 
